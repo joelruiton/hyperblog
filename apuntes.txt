@@ -21,7 +21,13 @@ nombre.
 git config --global user.email: cambia de manera global el email del usuario, seguidamente ponemos entre comillas nuestro 
 nombre.
 
-git log: se usa para ver la historia de nuestros archivos, los commits, el usuario que lo cambió, cuando se realizaron los 
-cambios etc. seguidamente ponemos el nombre de nuestro archivo.
+git log "archivo": se usa para ver la historia de nuestros archivos, los commits, el usuario que lo cambió, cuando se 
+realizaron los cambios etc. seguidamente ponemos el nombre de nuestro archivo.
 
 git show "archivo": para ver los cambios historicos del archivo indicado
+
+git diff "commit2" "commit1": compara 2 commits por su ID
+git diff: muestra diferencias entre el directorio actual y staging
+
+git reset "commit" --hard: regresa en el tiempo a un commit (--hard hace que se regrese totalmente en el tiempo,
+de no poner esto podríamos deshacer el reset y regresar a la version moderna)
