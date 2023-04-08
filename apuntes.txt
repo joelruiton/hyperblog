@@ -63,3 +63,8 @@ de trabajo)
 git merge: trae toda la info del repositorio local y la fusiona con el directorio de trabajo
 
 git pull: hace git fetch y git merge
+
+git checkout "branch": te mueve al branch indicado
+
+git commit -am "mensaje": hace un git add (sin considerar archivos nuevos), y seguidamente un git commit con el mensaje
+indicado
