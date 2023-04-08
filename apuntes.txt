@@ -6,8 +6,13 @@ que estamos y si tenemos commits.
 git add: es para añadir un archivo a nuestra rama seguidamente ponemos entre comillas el nombre de nuestro archivo o 
 poner un punto para añadir todos los archivos de nuestra carpeta.
 
-git rm: lo usamos para borrar un archivo que hayamos añadido, para eliminarlo por completo de nuestra rama usamos
-git rm --cached.
+git rm: lo usamos para borrar un archivo que hayamos añadido
+git rm --cached: Elimina los archivos de nuestro repositorio local y del área de staging, pero los mantiene en nuestro 
+disco duro. Básicamente le dice a Git que deje de trackear el historial de cambios de estos archivos, por lo que pasaran 
+a un estado untracked.
+git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al 
+registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos 
+más avanzados).
 
 git commit: se usa para añadir un commit a nuestra rama, también podemos ponerle un -m seguidamente ponemos entre comillas 
 nuestro ensaje.
@@ -29,5 +34,32 @@ git show "archivo": para ver los cambios historicos del archivo indicado
 git diff "commit2" "commit1": compara 2 commits por su ID
 git diff: muestra diferencias entre el directorio actual y staging
 
-git reset "commit" --hard: regresa en el tiempo a un commit (--hard hace que se regrese totalmente en el tiempo,
-de no poner esto podríamos deshacer el reset y regresar a la version moderna)
+git reset --soft: Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, 
+así podemos aplicar las últimas actualizaciones a un nuevo commit.
+git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging 
+se borra del historial.
+git reset HEAD: Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para 
+que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los 
+incluyamos de nuevo en staging con git add, por supuesto.
+
+git log --stat: Muestra la historia, incluyendo la diferencia de bytes
+
+git checkout "commit" "archivo": trae de regreso la version (como modificación, podría deshacerse) indicada del archivo 
+indicado.
+
+git checkout master "archivo": trae de regreso la version actual de master indicada del archivo 
+indicado.
+
+INCLUIMOS EL CONCEPTO DE REPOSITORIO REMOTO (GITHUB, GITLAB, BITBUCKET)
+
+git clone "url": se trae el contenido del master a nuestro repositorio local.
+
+git push: despues de haber enviado cambios del directorio de trabajo a staging con git add, y despues de haber pasado
+a staging con git commit, se usa git push para pasar del repositorio local al repositorio remoto
+
+git fetch: trae la ultima version de master del repositorio remoto al repositorio local (sin cambiar el directorio 
+de trabajo)
+
+git merge: trae toda la info del repositorio local y la fusiona con el directorio de trabajo
+
+git pull: hace git fetch y git merge
