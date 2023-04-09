@@ -104,3 +104,10 @@ REPOSITORIO REMOTO (GITHUB)
 git remote add origin "url": con esto le añadimos un repositorio remoto a nuestro proyecto local actual
 git remote -v: verifica la existencia del repositorio remoto
 git push origin master: fusiona una copia del master local con el remoto (github actualmente cambio master por main)
+PARA CAMBIAR DE MASTER A MAIN
+git branch -m main: crea la rama main localmente y la setea como el nuevo master
+git push origin main: fusiona una copia del main local con el remoto
+git pull origin main: fusiona una copia del main remoto con el local (en caso ya tengamos un proyecto en curso puede dar
+un warning indicando que las historias del origen remoto y local no guardan correlacion)
+git pull origin main --allow-unrelated-histories: fusiona una copia del main remoto con el local ignorando si las historias
+guardan relación o no
