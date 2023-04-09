@@ -47,24 +47,25 @@ git log --stat: Muestra la historia, incluyendo la diferencia de bytes
 git checkout "commit" "archivo": trae de regreso la version (como modificación, podría deshacerse) indicada del archivo 
 indicado.
 
+git commit -am "mensaje": hace un git add (sin considerar archivos nuevos), y seguidamente un git commit con el mensaje
+indicado
+
 git checkout master "archivo": trae de regreso la version actual de master indicada del archivo 
 indicado.
 
 INCLUIMOS EL CONCEPTO DE REPOSITORIO REMOTO (GITHUB, GITLAB, BITBUCKET)
-
 git clone "url": se trae el contenido del master a nuestro repositorio local.
-
 git push: despues de haber enviado cambios del directorio de trabajo a staging con git add, y despues de haber pasado
 a staging con git commit, se usa git push para pasar del repositorio local al repositorio remoto
 
 git fetch: trae la ultima version de master del repositorio remoto al repositorio local (sin cambiar el directorio 
 de trabajo)
-
 git merge: trae toda la info del repositorio local y la fusiona con el directorio de trabajo
-
 git pull: hace git fetch y git merge
 
+BRANCHS
+git branch "branch": crea un nuevo branch con el nombre especificado
 git checkout "branch": te mueve al branch indicado
-
-git commit -am "mensaje": hace un git add (sin considerar archivos nuevos), y seguidamente un git commit con el mensaje
-indicado
+git checkout -b "nombre_rama": Este comando es una fusión entre “git branch” y “git checkout”, y su funcionamiento es el siguiente:
+- Crea una rama llamada “nombre_rama”
+- Hace un checkout de la rama “nombre_rama”
