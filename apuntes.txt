@@ -111,5 +111,21 @@ git pull origin main: fusiona una copia del main remoto con el local (en caso ya
 un warning indicando que las historias del origen remoto y local no guardan correlacion)
 git pull origin main --allow-unrelated-histories: fusiona una copia del main remoto con el local ignorando si las historias
 guardan relación o no
-UNA VEZ ENLAZADOS AL REPOSITORIO REMOTO ES BUENA PRACTICA HACER GIT PULL ORIGIN MAIN ANTES DE HACER LOS COMMITS Y LOS
-PUSH DE MODO QUE NOS ASEGURAMOS DE SIEMPRE ESCRIBIR SOBRE LA ULTIMA VERSION
+UNA VEZ ENLAZADOS AL REPOSITORIO REMOTO ES BUENA PRACTICA HACER GIT PULL ORIGIN MAIN ANTES DE HACER LOS COMMITS, LOS
+PUSH Y EL ENVIO DE TAGS DE MODO QUE NOS ASEGURAMOS DE SIEMPRE ESCRIBIR SOBRE LA ULTIMA VERSION
+
+ALIAS
+Sirven para asignar un alias a un comando que a lo mejor es muy largo y queremos invocar de forma resumida
+alias arbol="git log --all --graph --decorate --oneline"
+con escribir "arbol" en el bash invocaremos todo el comando "git log --all --graph --decorate --oneline"
+
+TAGS
+Sirven para marcar algún commit en especifico a lo largo de la historia, de modo que sea fácilmente identificables
+para otros programadores, o para dejar algún registro para el equipo de trabajo que va a heredar el proyecto
+git tag -a v0.1 -m "Resultado de las primeras clases del curso" dbe9f0c: crea un nuevo tag asignado al id historico dbe9f0c
+(-a es para indicar que se va a agregar un tag / v0.1 es el nombre del tag, la convención es usar vX.X)
+git tag: Muestra los tags
+git show-ref --tags: Muestra los tags y a que id en la historia se hizo el commit(el commit tiene otro hash)
+git push origin --tags: Envia los tags al repositorio remoto (primero debe hacer un git pull origin main)
+git tag -d "nombredeltag": elimina el tag que le pasemos como parametro (localmente)
+git push origin :refs/tags/"nombredeltag": elimina el tag del repositorio remoto (previamente debe haber sido borrado localmente)
