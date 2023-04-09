@@ -99,3 +99,8 @@ Host *
   IdentityFile ~/.ssh/id_rsa
 Agrega tu llave
 ssh-add -K ~/.ssh/id_rsa
+
+REPOSITORIO REMOTO (GITHUB)
+git remote add origin "url": con esto le añadimos un repositorio remoto a nuestro proyecto local actual
+git remote -v: verifica la existencia del repositorio remoto
+git push origin master: fusiona una copia del master local con el remoto (github actualmente cambio master por main)
