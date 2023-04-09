@@ -111,5 +111,5 @@ git pull origin main: fusiona una copia del main remoto con el local (en caso ya
 un warning indicando que las historias del origen remoto y local no guardan correlacion)
 git pull origin main --allow-unrelated-histories: fusiona una copia del main remoto con el local ignorando si las historias
 guardan relación o no
-UNA VEZ ENLAZADOS AL REPOSITORIO REMOTO ES BUENA PRACTICA HACER GIT PULL ORIGIN MAIN ANTES DE HACER LOS COMMITS DE MODO QUE NOS
-ASEGURAMOS DE SIEMPRE ESCRIBIR SOBRE LA ULTIMA VERSION
+UNA VEZ ENLAZADOS AL REPOSITORIO REMOTO ES BUENA PRACTICA HACER GIT PULL ORIGIN MAIN ANTES DE HACER LOS COMMITS Y LOS
+PUSH DE MODO QUE NOS ASEGURAMOS DE SIEMPRE ESCRIBIR SOBRE LA ULTIMA VERSION
